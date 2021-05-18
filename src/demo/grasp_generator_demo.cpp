@@ -70,7 +70,7 @@ public:
   // Constructor
   GraspGeneratorDemo(int num_tests) : nh_("~")
   {
-    nh_.param("ee_group_name", ee_group_name_, std::string("hand"));
+    nh_.param("ee_group_name", ee_group_name_, std::string("edo_gripper"));
 
     ROS_INFO_STREAM_NAMED("demo", "End Effector: " << ee_group_name_);
 

@@ -278,9 +278,9 @@ bool GraspData::fingerWidthToGraspPosture(const double& distance_btw_fingers,
     intercept[joint_index] = max_finger_width_ - slope[joint_index] * pre_grasp_pose[joint_index];
 
     // Sanity check
-    ROS_ASSERT_MSG(intercept[joint_index] == min_finger_width_ - slope[joint_index] * grasp_pose[joint_index],
-                   "we got different y intercept!! %.3f and %.3f", intercept[joint_index],
-                   min_finger_width_ - slope[joint_index] * grasp_pose[joint_index]);
+//    ROS_ASSERT_MSG(intercept[joint_index] == min_finger_width_ - slope[joint_index] * grasp_pose[joint_index],
+//                   "we got different y intercept!! %.30f and %.30f", intercept[joint_index],
+//                   min_finger_width_ - slope[joint_index] * grasp_pose[joint_index]);
 
     joint_positions[joint_index] = (distance_btw_fingers - intercept[joint_index]) / slope[joint_index];
 

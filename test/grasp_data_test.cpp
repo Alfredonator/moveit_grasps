@@ -56,7 +56,7 @@ class GraspDataTest : public ::testing::Test
 {
 public:
   GraspDataTest()
-    : nh_("~"), ee_group_name_("hand"), visual_tools_(new moveit_visual_tools::MoveItVisualTools("panda_link0"))
+    : nh_("~"), ee_group_name_("edo_gripper"), visual_tools_(new moveit_visual_tools::MoveItVisualTools("panda_link0"))
   {
     grasp_data_.reset(new GraspData(nh_, ee_group_name_, visual_tools_->getRobotModel()));
   }

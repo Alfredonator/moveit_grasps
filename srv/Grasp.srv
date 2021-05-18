@@ -1,0 +1,4 @@
+string object_name
+---
+geometry_msgs/Pose pre_grasp
+geometry_msgs/Pose grasp

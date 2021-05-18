@@ -61,8 +61,8 @@ public:
   explicit GraspPosesVisualizer(bool verbose, const std::string name) : nh_("~"), name_(name)
   {
     // get arm parameters
-    nh_.param("ee_group_name", ee_group_name_, std::string("hand"));
-    nh_.param("planning_group_name", planning_group_name_, std::string("panda_arm"));
+    nh_.param("ee_group_name", ee_group_name_, std::string("edo_gripper"));
+    nh_.param("planning_group_name", planning_group_name_, std::string("edo"));
 
     ROS_INFO_STREAM_NAMED("init", "End Effector: " << ee_group_name_);
     ROS_INFO_STREAM_NAMED("init", "Planning Group: " << planning_group_name_);

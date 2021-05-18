@@ -34,6 +34,17 @@ find_package(catkin REQUIRED COMPONENTS
   trajectory_msgs
 )
 
+## Declare ROS messages and services
+add_service_files(
+        FILES
+        Grasp.srv
+)
+
+## Generate added messages and services
+generate_messages(DEPENDENCIES
+        std_msgs
+        geometry_msgs)
+
 # Catkin
 catkin_package(
   LIBRARIES

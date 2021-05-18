@@ -19,8 +19,8 @@
   <!-- Start the demo -->
   <node name="moveit_grasps_demo" launch-prefix="$(arg launch_prefix)" pkg="moveit_grasps"
   type="moveit_grasps_grasp_filter_demo" output="screen" args="$(arg command_args)">
-    <param name="ee_group_name" value="hand"/>
-    <param name="planning_group_name" value="panda_arm"/>
+    <param name="ee_group_name" value="edo_gripper"/>
+    <param name="planning_group_name" value="edo"/>
     <param name="moveit_grasps/filter/statistics_verbose" value="true"/>
     <param name="moveit_grasps/filter/show_filtered_grasps" value="true"/>
     <param name="moveit_grasps/filter/show_cutting_planes" value="true"/>

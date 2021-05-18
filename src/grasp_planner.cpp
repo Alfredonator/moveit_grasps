@@ -202,28 +202,28 @@ bool GraspPlanner::planApproachLiftRetreat(GraspCandidatePtr& grasp_candidate,
   ROS_DEBUG_STREAM_NAMED("grasp_planner.waypoints", "Found valid and complete waypoint manipulation path for grasp "
                                                     "candidate");
 
-  // Show visuals
-  if (show_cartesian_waypoints)
-  {
-    ROS_INFO_STREAM_NAMED("grasp_planner.waypoints", "Visualize end effector position of cartesian path for "
-                                                         << grasp_candidate->segmented_cartesian_traj_.size()
-                                                         << " segments");
-    visual_tools_->publishTrajectoryPoints(grasp_candidate->segmented_cartesian_traj_[APPROACH],
-                                           grasp_candidate->grasp_data_->parent_link_, rviz_visual_tools::YELLOW);
-    visual_tools_->publishTrajectoryPoints(grasp_candidate->segmented_cartesian_traj_[LIFT],
-                                           grasp_candidate->grasp_data_->parent_link_, rviz_visual_tools::ORANGE);
-    visual_tools_->publishTrajectoryPoints(grasp_candidate->segmented_cartesian_traj_[RETREAT],
-                                           grasp_candidate->grasp_data_->parent_link_, rviz_visual_tools::RED);
-    visual_tools_->trigger();
-
-    bool wait_for_animation = true;
-    visual_tools_->publishTrajectoryPath(grasp_candidate->segmented_cartesian_traj_[APPROACH],
-                                         grasp_candidate->grasp_data_->arm_jmg_, wait_for_animation);
-    visual_tools_->publishTrajectoryPath(grasp_candidate->segmented_cartesian_traj_[LIFT],
-                                         grasp_candidate->grasp_data_->arm_jmg_, wait_for_animation);
-    visual_tools_->publishTrajectoryPath(grasp_candidate->segmented_cartesian_traj_[RETREAT],
-                                         grasp_candidate->grasp_data_->arm_jmg_, wait_for_animation);
-  }
+//  // Show visuals
+//  if (show_cartesian_waypoints)
+//  {
+//    ROS_INFO_STREAM_NAMED("grasp_planner.waypoints", "Visualize end effector position of cartesian path for "
+//                                                         << grasp_candidate->segmented_cartesian_traj_.size()
+//                                                         << " segments");
+//    visual_tools_->publishTrajectoryPoints(grasp_candidate->segmented_cartesian_traj_[APPROACH],
+//                                           grasp_candidate->grasp_data_->parent_link_, rviz_visual_tools::YELLOW);
+//    visual_tools_->publishTrajectoryPoints(grasp_candidate->segmented_cartesian_traj_[LIFT],
+//                                           grasp_candidate->grasp_data_->parent_link_, rviz_visual_tools::ORANGE);
+//    visual_tools_->publishTrajectoryPoints(grasp_candidate->segmented_cartesian_traj_[RETREAT],
+//                                           grasp_candidate->grasp_data_->parent_link_, rviz_visual_tools::RED);
+//    visual_tools_->trigger();
+//
+//    bool wait_for_animation = true;
+//    visual_tools_->publishTrajectoryPath(grasp_candidate->segmented_cartesian_traj_[APPROACH],
+//                                         grasp_candidate->grasp_data_->arm_jmg_, wait_for_animation);
+//    visual_tools_->publishTrajectoryPath(grasp_candidate->segmented_cartesian_traj_[LIFT],
+//                                         grasp_candidate->grasp_data_->arm_jmg_, wait_for_animation);
+//    visual_tools_->publishTrajectoryPath(grasp_candidate->segmented_cartesian_traj_[RETREAT],
+//                                         grasp_candidate->grasp_data_->arm_jmg_, wait_for_animation);
+//  }
 
   if (verbose_cartesian_filtering)
     waitForNextStep("try next candidate grasp");
